@@ -5,10 +5,12 @@ const express = require("express");
 const router = express.Router();
 const { check, validationResult } = require("express-validator");
 
+
+const User = require("../../models/user");
 router.post(
   "/",
   // First, we AUTHENTICATE user input to make sure we elimate any errors before we add them into
-  // the databse
+  // the database
   [
     check("name", "Please provide a valid Name").not().isEmpty(),
     check("email", "Please provide a valid email to register").isEmail(),
