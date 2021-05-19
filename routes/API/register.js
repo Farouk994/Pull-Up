@@ -72,13 +72,15 @@ router.post(
           res.json({ token });
         }
       );
-
     } catch (err) {
       console.log(err.message);
       res.status(500).send(err.message);
     }
-    // res.send("User has been registered");
   }
 );
 
 module.exports = router;
+
+// validate user
+// check if user exists
+// hash password

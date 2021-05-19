@@ -10,9 +10,9 @@ app.use(express.json());
 
 connectDB();
 
-app.use("/api/user",require("./routes/API/register"));
-app.use("/api/post",require("./routes/API/post"));
-app.use("/api/register",require("./routes/API/home"));
+app.use("/api/user",require("./routes/API/home"));
+app.use("/api/auth",require("./routes/API/auth"));
+app.use("/api/register",require("./routes/API/register"));
 
 app.get("/",(req,res)=>{
     res.send("This is Pull Up")
@@ -21,3 +21,8 @@ app.get("/",(req,res)=>{
 app.listen(PORT, ()=>{
     console.log(" ===> Listening to PORT " + PORT)
 });
+
+function getRandom(num) {
+    return Math.floor(Math.random());
+  }
+
